@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin: 0; padding: 0; background-color: #0b0f19; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f3f4f6; }
+    .container { max-width: 520px; margin: 40px auto; background-color: #111827; border: 1px solid #1f2937; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .header { background: linear-gradient(135deg, #ef4444 0%, #f97316 100%); padding: 32px 24px; text-align: center; }
+    .flame-icon { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #ffffff; font-weight: 700; margin-bottom: 8px; }
+    .streak-number { font-size: 38px; font-weight: 900; color: #ffffff; letter-spacing: -1px; margin: 0; }
+    .streak-subtitle { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.9); font-weight: 600; margin-top: 4px; }
+    .content { padding: 32px 28px; }
+    .greeting { font-size: 18px; font-weight: 600; color: #ffffff; margin-bottom: 12px; }
+    .description { font-size: 15px; line-height: 1.6; color: #9ca3af; margin-bottom: 24px; }
+    .timer-box { background-color: #1f2937; border-left: 4px solid #f97316; padding: 14px 18px; border-radius: 4px; margin-bottom: 28px; font-size: 14px; color: #e5e7eb; }
+    .btn-container { text-align: center; margin: 30px 0 10px; }
+    .solve-btn { background: #f97316; color: #ffffff !important; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 15px; display: inline-block; transition: background 0.2s; }
+    .footer { border-top: 1px solid #1f2937; padding: 20px; text-align: center; font-size: 12px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="flame-icon">[STREAK ALERT]</div>
+      <h1 class="streak-number">{{currentStreak}} DAYS</h1>
+      <div class="streak-subtitle">Active LeetCode Streak {{targetDateBadge}}</div>
+    </div>
+    <div class="content">
+      <div class="greeting">Hey {{userName}},</div>
+      <p class="description">
+        You have maintained an incredible <strong>{{currentStreak}}-day consistency</strong>! Do not let your discipline slip today. You have approximately <strong>{{hoursLeft}} hours left</strong> before your streak resets to zero.
+      </p>
+      <div class="timer-box">
+        <strong>Clock is ticking:</strong> Solve at least one problem to lock in today's submission and push your commit to GitHub!
+      </div>
+      <div class="btn-container">
+        <a href="{{solveUrl}}" target="_blank" class="solve-btn">Solve Today's Problem Now →</a>
+      </div>
+    </div>
+    <div class="footer">
+      Autonomous Alert from <strong>LeetCode-to-GitHub System</strong> // Syntra
+    </div>
+  </div>
+</body>
+</html>

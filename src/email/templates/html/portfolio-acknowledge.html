@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { margin: 0; padding: 0; background-color: #0b0f19; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #f3f4f6; }
+    .container { max-width: 560px; margin: 30px auto; background-color: #111827; border-radius: 10px; border: 1px solid #1f2937; padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .badge { display: inline-block; background-color: #1e293b; color: #38bdf8; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; padding: 6px 12px; border-radius: 4px; margin-bottom: 20px; border: 1px solid #334155; }
+    h1 { margin: 0 0 12px 0; font-size: 24px; color: #ffffff; font-weight: 800; }
+    p { font-size: 15px; line-height: 1.7; color: #9ca3af; margin: 0 0 20px 0; }
+    .card { background-color: #1e293b; border-left: 3px solid #38bdf8; border-radius: 4px; padding: 18px; margin: 24px 0; }
+    .card-title { font-size: 13px; text-transform: uppercase; letter-spacing: 1.5px; color: #cbd5e1; font-weight: 700; margin-bottom: 8px; }
+    .card-text { font-size: 14px; color: #94a3b8; line-height: 1.6; margin: 0; }
+    .feature-list { margin: 24px 0; padding: 0; list-style: none; }
+    .feature-item { padding: 8px 0; font-size: 14px; color: #e2e8f0; display: flex; align-items: center; }
+    .feature-bullet { color: #38bdf8; font-weight: 700; margin-right: 10px; }
+    .links-box { margin-top: 28px; padding-top: 20px; border-top: 1px solid #1f2937; }
+    .link-btn { display: inline-block; background-color: #2563eb; color: #ffffff !important; text-decoration: none; padding: 10px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; margin-right: 10px; }
+    .secondary-link { display: inline-block; color: #38bdf8; text-decoration: none; font-size: 13px; margin-left: 8px; font-weight: 500; }
+    .footer { margin-top: 32px; font-size: 12px; color: #64748b; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">[CONFIRMATION] INQUIRY RECEIVED</div>
+    <h1>Message Received</h1>
+    <p>Dear {{visitorName}},</p>
+    <p>
+      Thank you for reaching out through my portfolio. This automated confirmation verifies that your inquiry has been successfully delivered to my personal inbox.
+    </p>
+
+    {{messageExcerptBox}}
+
+    <div class="card">
+      <div class="card-title">What to Expect</div>
+      <ul class="feature-list">
+        <li class="feature-item"><span class="feature-bullet">•</span> Direct personal response from Rudresh Patel within 24 hours.</li>
+        <li class="feature-item"><span class="feature-bullet">•</span> Detailed technical or collaborative discussion.</li>
+        <li class="feature-item"><span class="feature-bullet">•</span> Clear and actionable next steps.</li>
+      </ul>
+    </div>
+
+    <div class="links-box">
+      <a href="https://rudreshp.me" target="_blank" class="link-btn">View Portfolio →</a>
+      <a href="https://github.com/rudresh" target="_blank" class="secondary-link">GitHub</a>
+    </div>
+
+    <div class="footer">
+      Rudresh Patel // Autonomous Engineering Gateway
+    </div>
+  </div>
+</body>
+</html>

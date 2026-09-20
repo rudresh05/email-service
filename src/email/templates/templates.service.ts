@@ -90,16 +90,16 @@ export class TemplatesService implements OnModuleInit {
   ): { subject: string; html: string; text: string } {
     switch (type) {
       case EmailTemplateType.STREAK_ALERT:
-        return this.renderStreakAlert(data);
+        return this.renderStreakAlert(data, customSubject);
 
       case EmailTemplateType.PORTFOLIO_CONTACT:
-        return this.renderPortfolioContact(data);
+        return this.renderPortfolioContact(data, customSubject);
 
       case EmailTemplateType.PORTFOLIO_ACKNOWLEDGE:
-        return this.renderPortfolioAcknowledge(data);
+        return this.renderPortfolioAcknowledge(data, customSubject);
 
       case EmailTemplateType.JOURNAL_UPDATE:
-        return this.renderJournalUpdate(data);
+        return this.renderJournalUpdate(data, customSubject);
 
       case EmailTemplateType.CUSTOM_RAW:
         return this.renderCustomRaw(customSubject, customHtml, customText);
@@ -111,7 +111,7 @@ export class TemplatesService implements OnModuleInit {
     }
   }
 
-  private renderStreakAlert(data: StreakAlertDataDto) {
+  private renderStreakAlert(data: StreakAlertDataDto, customSubject?: string) {
     if (!data) {
       throw new BadRequestException(
         '[Zero Fallback Violation] Missing "data" payload for STREAK_ALERT template',
@@ -142,12 +142,12 @@ export class TemplatesService implements OnModuleInit {
       targetDateBadge: targetBadge,
     });
 
-    const subject = `Alert: Your ${currentStreak}-Day LeetCode Streak is in Danger!`;
+    const subject = customSubject || `Alert: Your ${currentStreak}-Day LeetCode Streak is in Danger!`;
     const text = `Hey ${userName},\nYour ${currentStreak}-day LeetCode streak is about to break! You have ${hours} hours left to solve a problem: ${url}`;
     return { subject, html, text };
   }
 
-  private renderPortfolioContact(data: PortfolioContactDataDto) {
+  private renderPortfolioContact(data: PortfolioContactDataDto, customSubject?: string) {
     if (!data) {
       throw new BadRequestException(
         '[Zero Fallback Violation] Missing "data" payload for PORTFOLIO_CONTACT template',
@@ -177,12 +177,12 @@ export class TemplatesService implements OnModuleInit {
       message,
     });
 
-    const subject = `New Portfolio Message from ${visitorName}`;
+    const subject = customSubject || `New Portfolio Message from ${visitorName}`;
     const text = `New Portfolio Inquiry from ${visitorName} (${visitorEmail}):\n\n${message}`;
     return { subject, html, text };
   }
 
-  private renderPortfolioAcknowledge(data: PortfolioAcknowledgeDataDto) {
+  private renderPortfolioAcknowledge(data: PortfolioAcknowledgeDataDto, customSubject?: string) {
     if (!data) {
       throw new BadRequestException(
         '[Zero Fallback Violation] Missing "data" payload for PORTFOLIO_ACKNOWLEDGE template',
@@ -199,23 +199,18 @@ export class TemplatesService implements OnModuleInit {
       );
     }
 
-    const { visitorName, messageExcerpt } = data;
-    const excerptHtml = messageExcerpt
-      ? `<div class="card"><div class="card-title">Message Summary</div><p class="card-text">${messageExcerpt}</p></div>`
-      : '';
-
+    const { visitorName } = data;
     const rawHtml = this.readTemplateFile('portfolio-acknowledge.html');
     const html = this.interpolate(rawHtml, {
       visitorName,
-      messageExcerptBox: excerptHtml,
     });
 
-    const subject = `Thank you for reaching out, ${visitorName} [Rudresh Patel]`;
-    const text = `Dear ${visitorName},\n\nThank you for reaching out through my portfolio. Your inquiry has been delivered and I will get back to you within 24 hours.\n\nBest regards,\nRudresh Patel\nhttps://rudreshp.me`;
+    const subject = customSubject || `Thanks for reaching out! — Rudresh Patel`;
+    const text = `Hi ${visitorName},\n\nThank you for reaching out through my portfolio. I have received your message and will get back to you within 24 hours. Looking forward to connecting!\n\nBest regards,\nRudresh Patel\nhttps://rudreshp.me`;
     return { subject, html, text };
   }
 
-  private renderJournalUpdate(data: JournalUpdateDataDto) {
+  private renderJournalUpdate(data: JournalUpdateDataDto, customSubject?: string) {
     if (!data) {
       throw new BadRequestException(
         '[Zero Fallback Violation] Missing "data" payload for JOURNAL_UPDATE template',
@@ -229,35 +224,35 @@ export class TemplatesService implements OnModuleInit {
 
     const {
       date,
-      deepWorkHours = '0h',
-      revenue = 'Rs 0',
-      networking = '0',
-      codingCompleted = 'System baseline maintained.',
-      workCompleted = 'Routine processing.',
-      wins = 'Compounding output.',
-      nonNegotiable1 = 'Pending initialization.',
-      nonNegotiable2 = 'Pending initialization.',
-      nonNegotiable3 = 'Pending initialization.',
-      futureSentence = 'Moving forward without friction.',
+      deepWorkHours = '',
+      revenue = '',
+      networking = '',
+      codingCompleted = '',
+      workCompleted = '',
+      wins = '',
+      nonNegotiable1 = '',
+      nonNegotiable2 = '',
+      nonNegotiable3 = '',
+      futureSentence = '',
     } = data;
 
     const rawHtml = this.readTemplateFile('journal-update.html');
     const html = this.interpolate(rawHtml, {
       date,
-      deepWorkHours,
-      revenue,
-      networking,
-      codingCompleted,
-      workCompleted,
-      wins,
-      nonNegotiable1,
-      nonNegotiable2,
-      nonNegotiable3,
-      futureSentence,
+      deepWorkHours: deepWorkHours || '—',
+      revenue: revenue || '—',
+      networking: networking || '—',
+      codingCompleted: codingCompleted || '—',
+      workCompleted: workCompleted || '—',
+      wins: wins || '—',
+      nonNegotiable1: nonNegotiable1 || '—',
+      nonNegotiable2: nonNegotiable2 || '—',
+      nonNegotiable3: nonNegotiable3 || '—',
+      futureSentence: futureSentence || '',
     });
 
-    const subject = `Journal Update // ${date}`;
-    const text = `Journal Update // ${date}\nFlow: ${deepWorkHours}\nAssets: ${revenue}\nWins: ${wins}`;
+    const subject = customSubject || `Journal Update // ${date}`;
+    const text = `Journal Update // ${date}\nFlow: ${deepWorkHours || '—'}\nAssets: ${revenue || '—'}\nWins: ${wins || '—'}`;
     return { subject, html, text };
   }
 
@@ -273,7 +268,7 @@ export class TemplatesService implements OnModuleInit {
       );
     }
 
-    const html = customHtml || `<p>${customText}</p>`;
+    const html = customHtml || customText || '';
     const text = customText || (customHtml ? customHtml.replace(/<[^>]*>?/gm, '') : '');
 
     return {

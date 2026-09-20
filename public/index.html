@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get in Touch — Rudresh Patel</title>
+  <meta name="description" content="Reach out to Rudresh Patel for internships, freelance collaboration, and high-impact product roles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f3ec;
+      --bg-soft: #efe8dc;
+      --text: #181512;
+      --muted: #6f675e;
+      --line: rgba(24, 21, 18, 0.12);
+      --panel: rgba(255, 252, 246, 0.78);
+      --panel-strong: rgba(255, 252, 246, 0.94);
+      --accent: #0f766e;
+      --accent-strong: #115e59;
+      --gold: #b7791f;
+      --rose: #be3455;
+      --shadow: 0 24px 90px rgba(77, 54, 26, 0.16);
+    }
+
+    html.dark {
+      color-scheme: dark;
+      --bg: #0c0b09;
+      --bg-soft: #15120f;
+      --text: #f6f1e8;
+      --muted: #b6ab9a;
+      --line: rgba(246, 241, 232, 0.13);
+      --panel: rgba(24, 21, 17, 0.76);
+      --panel-strong: rgba(16, 14, 12, 0.92);
+      --accent: #5eead4;
+      --accent-strong: #99f6e4;
+      --gold: #f6c453;
+      --rose: #fb7185;
+      --shadow: 0 28px 100px rgba(0, 0, 0, 0.38);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      cursor: default;
+    }
+
+    body {
+      color: var(--text);
+      background:
+        linear-gradient(90deg, color-mix(in srgb, var(--line) 35%, transparent) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in srgb, var(--line) 35%, transparent) 1px, transparent 1px),
+        linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 32%),
+        linear-gradient(315deg, color-mix(in srgb, var(--gold) 10%, transparent), transparent 30%),
+        var(--bg);
+      background-size: 42px 42px, 42px 42px, auto, auto, auto;
+      overflow-x: hidden;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      position: relative;
+      isolation: isolate;
+      min-height: 100vh;
+    }
+
+    .bg-grain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.045;
+      background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    }
+
+    ::selection {
+      background: color-mix(in srgb, var(--accent) 28%, transparent);
+      color: var(--text);
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px) saturate(130%);
+    }
+
+    .panel-strong {
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px) saturate(130%);
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: color-mix(in srgb, var(--panel-strong) 76%, transparent);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: color-mix(in srgb, var(--text) 7%, transparent);
+    }
+
+    .accent-text {
+      color: var(--accent);
+    }
+
+    .muted-text {
+      color: var(--muted);
+    }
+
+    .text-balance {
+      text-wrap: balance;
+    }
+
+    /* Floating input styles exactly like portfolio Contact.tsx */
+    .floating-field {
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      color: var(--text);
+      outline: none;
+      transition: border-color 160ms ease, color 160ms ease;
+    }
+
+    .floating-field:focus {
+      border-color: var(--accent);
+    }
+
+    .floating-field.has-error {
+      border-color: rgba(251, 113, 133, 0.75) !important;
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- Grain overlay exactly like portfolio -->
+  <div class="bg-grain" aria-hidden="true"></div>
+
+  <!-- FLOATING NAVBAR (Portfolio Exact Aesthetic) -->
+ 
+
+  <!-- MAIN CONTACT LAYOUT -->
+  <main class="relative mx-auto w-full max-w-5xl px-4 sm:px-6 pt-28 pb-20 sm:pt-32 sm:pb-24">
+    <div class="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
+      
+      <!-- LEFT COLUMN: GET IN TOUCH -->
+      <div class="panel rounded-lg p-6 sm:p-8 flex flex-col justify-between">
+        <div>
+          <p class="accent-text text-xs font-black uppercase tracking-[0.24em]">Get In Touch</p>
+          <h1 class="text-balance mt-3 text-3xl sm:text-4xl lg:text-5xl font-black text-[var(--text)] leading-tight">
+            Let's build something with taste.
+          </h1>
+          <p class="muted-text mt-4 max-w-md text-sm leading-7">
+            Open to internships, freelance collaboration, and high-impact product roles. Send a message through this direct gateway.
+          </p>
+
+          <!-- ACTIVE PROJECT SOURCE BADGE -->
+          <div id="projectSourceBox" class="hidden mt-5 rounded-lg border border-[var(--line)] p-3.5 bg-[color-mix(in_srgb,var(--panel-strong)_70%,transparent)]">
+            <div class="flex items-center gap-2 text-xs font-bold text-[var(--accent)]">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span class="muted-text uppercase tracking-wider text-[11px]">Inquiring from:</span>
+              <span id="projectSourceName" class="text-[var(--text)] uppercase tracking-wider font-black"></span>
+            </div>
+          </div>
+
+          <!-- EMAIL CARD -->
+          <div class="mt-7 rounded-lg border border-[var(--line)] p-4">
+            <p class="muted-text text-xs uppercase tracking-[0.18em]">Email</p>
+            <div class="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <span id="emailText" class="break-all text-sm font-bold text-[var(--text)]">rudreshpatel504@gmail.com</span>
+              <button type="button" id="copyBtn" onclick="copyEmail()" class="btn-secondary inline-flex items-center justify-center gap-1.5 rounded-md px-3.5 py-1.5 text-xs font-black transition">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                <span id="copyLabel">Copy</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- PHONE CARD -->
+          <div class="mt-4 rounded-lg border border-[var(--line)] p-4">
+            <p class="muted-text text-xs uppercase tracking-[0.18em]">Phone / WhatsApp</p>
+            <div class="mt-2 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <span class="break-all text-sm font-bold text-[var(--text)]">+91 84170 93402</span>
+              <div class="flex items-center gap-2">
+                <a href="tel:+918417093402" class="btn-secondary inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-black transition">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                  Call
+                </a>
+                <button type="button" id="copyPhoneBtn" onclick="copyPhone()" class="btn-secondary inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-black transition">
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                  <span id="copyPhoneLabel">Copy</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOCIAL LINKS -->
+        <div class="mt-8 flex items-center gap-3 pt-4">
+          <a href="https://github.com/rudresh05" target="_blank" rel="noreferrer" aria-label="GitHub" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--line)] text-[var(--text)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--text)_7%,transparent)]" title="GitHub">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/rudresh-patel-95a9b4284/" target="_blank" rel="noreferrer" aria-label="LinkedIn" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--line)] text-[var(--text)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--text)_7%,transparent)]" title="LinkedIn">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://wa.me/918417093402" target="_blank" rel="noreferrer" aria-label="WhatsApp" class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-[var(--line)] text-[var(--text)] transition hover:-translate-y-0.5 hover:bg-[color-mix(in_srgb,var(--text)_7%,transparent)]" title="WhatsApp (+91 84170 93402)">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: THE INTERACTIVE CONTACT FORM -->
+      <div class="panel-strong rounded-lg p-6 sm:p-8 relative">
+        
+        <!-- SUCCESS STATE OVERLAY -->
+        <div id="successState" class="hidden flex-col items-center justify-center text-center py-12">
+          <div class="w-16 h-16 rounded-full border border-[var(--line)] flex items-center justify-center text-[var(--accent)] mb-5" style="background: color-mix(in srgb, var(--accent) 12%, transparent);">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <h2 class="text-2xl font-black text-[var(--text)] mb-2">Message Delivered!</h2>
+          <p class="muted-text max-w-md text-sm leading-relaxed mb-6">
+            Thank you for reaching out. Your inquiry has landed directly in my inbox, and an automated confirmation was sent to <span id="successEmailRecipient" class="font-bold text-[var(--accent)] font-mono"></span>.
+          </p>
+          <button type="button" onclick="resetForm()" class="btn-primary rounded-md px-5 py-2.5 text-xs font-black transition hover:-translate-y-0.5">
+            Send Another Message
+          </button>
+        </div>
+
+        <!-- THE FORM -->
+        <form id="contactForm" onsubmit="handleFormSubmit(event)" novalidate class="space-y-4">
+          
+          <!-- Hidden Honeypot Field (Anti-Bot) -->
+          <input type="text" name="website_hp" id="website_hp" tabindex="-1" autocomplete="off" class="hidden" style="display:none !important;" />
+
+          <!-- FLOATING FIELD: NAME -->
+          <label for="visitorName" class="relative block">
+            <input 
+              type="text" 
+              id="visitorName" 
+              name="visitorName" 
+              placeholder=" "
+              class="floating-field peer w-full px-0 pb-2 pt-5 text-sm"
+            />
+            <span class="pointer-events-none absolute left-0 top-4 text-sm text-[var(--muted)] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-[var(--accent)] peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs">
+              Name
+            </span>
+            <p id="visitorNameError" class="hidden mt-2 text-xs text-rose-400">
+              Please enter your name (at least 2 characters).
+            </p>
+          </label>
+
+          <!-- FLOATING FIELD: EMAIL -->
+          <label for="visitorEmail" class="relative block">
+            <input 
+              type="email" 
+              id="visitorEmail" 
+              name="visitorEmail" 
+              placeholder=" "
+              class="floating-field peer w-full px-0 pb-2 pt-5 text-sm"
+            />
+            <span class="pointer-events-none absolute left-0 top-4 text-sm text-[var(--muted)] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-[var(--accent)] peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs">
+              Email
+            </span>
+            <p id="visitorEmailError" class="hidden mt-2 text-xs text-rose-400">
+              Please enter a valid email address.
+            </p>
+          </label>
+
+          <!-- FLOATING FIELD: TOPIC / PROJECT ORIGIN -->
+          <label for="project" class="relative block">
+            <input 
+              type="text" 
+              id="project" 
+              name="project" 
+              placeholder=" "
+              class="floating-field peer w-full px-0 pb-2 pt-5 text-sm"
+            />
+            <span class="pointer-events-none absolute left-0 top-4 text-sm text-[var(--muted)] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-[var(--accent)] peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs">
+              Topic / Project Origin (Optional)
+            </span>
+          </label>
+
+          <!-- FLOATING FIELD: MESSAGE -->
+          <label for="message" class="relative block">
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              placeholder=" "
+              oninput="updateCharCount()"
+              class="floating-field peer w-full px-0 pb-2 pt-5 text-sm resize-none"
+            ></textarea>
+            <span class="pointer-events-none absolute left-0 top-4 text-sm text-[var(--muted)] transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1 peer-focus:text-xs peer-focus:text-[var(--accent)] peer-[:not(:placeholder-shown)]:top-1 peer-[:not(:placeholder-shown)]:text-xs">
+              Message
+            </span>
+            <div class="flex justify-between items-center mt-1">
+              <p id="messageError" class="hidden text-xs text-rose-400">
+                Please write a message (at least 10 characters).
+              </p>
+              <span id="charCount" class="text-[11px] font-mono text-[var(--muted)] ml-auto">0 characters</span>
+            </div>
+          </label>
+
+          <!-- ERROR ALERT (Hidden by default) -->
+          <div id="errorAlert" class="hidden p-3.5 rounded-md border border-rose-400/40 bg-rose-950/20 text-rose-300 text-xs flex items-center gap-2">
+            <svg class="w-4 h-4 text-rose-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span id="errorMessage">Please correct the errors and try again.</span>
+          </div>
+
+          <!-- SUBMIT BUTTON (Exact Portfolio btn-primary) -->
+          <button 
+            type="submit" 
+            id="submitBtn"
+            class="btn-primary mt-6 inline-flex min-w-36 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-black transition hover:-translate-y-0.5 active:scale-[0.99]"
+          >
+            <svg id="btnIcon" class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+            <span id="btnText">Send Message</span>
+            <svg id="btnSpinner" class="hidden animate-spin h-4 w-4 text-inherit" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+          </button>
+
+          <p class="text-xs text-[var(--muted)] pt-2">
+            Encrypted &bull; Handled directly by personal mail service
+          </p>
+        </form>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // 1. Detect ?project= query parameter on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectParam = urlParams.get('project') || urlParams.get('source');
+      if (projectParam) {
+        document.getElementById('project').value = projectParam;
+        document.getElementById('projectSourceName').innerText = projectParam;
+        document.getElementById('projectSourceBox').classList.remove('hidden');
+      }
+    });
+
+    // 2. Character counter
+    function updateCharCount() {
+      const msg = document.getElementById('message').value;
+      document.getElementById('charCount').innerText = `${msg.length} characters`;
+    }
+
+    // 3. One-click copy email
+    function copyEmail() {
+      const email = document.getElementById('emailText').innerText;
+      navigator.clipboard.writeText(email).then(() => {
+        const label = document.getElementById('copyLabel');
+        label.innerText = 'Copied!';
+        setTimeout(() => { label.innerText = 'Copy'; }, 1800);
+      });
+    }
+
+    // 4. One-click copy phone
+    function copyPhone() {
+      navigator.clipboard.writeText('+918417093402').then(() => {
+        const label = document.getElementById('copyPhoneLabel');
+        label.innerText = 'Copied!';
+        setTimeout(() => { label.innerText = 'Copy'; }, 1800);
+      });
+    }
+
+    // Helper to toggle custom field error UI
+    function setFieldError(fieldId, errorId, show, msg) {
+      const inputEl = document.getElementById(fieldId);
+      const errorEl = document.getElementById(errorId);
+      if (!inputEl || !errorEl) return;
+
+      if (show) {
+        inputEl.classList.add('has-error');
+        if (msg) {
+          errorEl.innerText = msg;
+        }
+        errorEl.classList.remove('hidden');
+      } else {
+        inputEl.classList.remove('has-error');
+        errorEl.classList.add('hidden');
+      }
+    }
+
+    // Attach real-time input listeners to remove error state as the user types
+    ['visitorName', 'visitorEmail', 'message'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          setFieldError(id, `${id}Error`, false);
+        });
+      }
+    });
+
+    // 5. Reset Form to send another
+    function resetForm() {
+      document.getElementById('contactForm').reset();
+      setFieldError('visitorName', 'visitorNameError', false);
+      setFieldError('visitorEmail', 'visitorEmailError', false);
+      setFieldError('message', 'messageError', false);
+      document.getElementById('errorAlert').classList.add('hidden');
+      document.getElementById('successState').classList.add('hidden');
+      document.getElementById('contactForm').classList.remove('hidden');
+      updateCharCount();
+    }
+
+    // Dynamically resolve backend endpoint:
+    // If running on VS Code Live Server (port 5500), file://, or different dev port, target localhost:3001
+    function getApiEndpoint() {
+      if (window.CONTACT_API_URL) return window.CONTACT_API_URL;
+      const isLocalHost = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost';
+      if (isLocalHost && window.location.port && window.location.port !== '3001') {
+        return 'http://localhost:3001/api/contact/submit';
+      }
+      if (window.location.protocol === 'file:') {
+        return 'http://localhost:3001/api/contact/submit';
+      }
+      return '/api/contact/submit';
+    }
+
+    // 6. Handle Form Submit with Custom Validation
+    async function handleFormSubmit(e) {
+      e.preventDefault();
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const btnIcon = document.getElementById('btnIcon');
+      const btnSpinner = document.getElementById('btnSpinner');
+      const errorAlert = document.getElementById('errorAlert');
+      const errorMessage = document.getElementById('errorMessage');
+
+      errorAlert.classList.add('hidden');
+
+      const visitorName = document.getElementById('visitorName').value.trim();
+      const visitorEmail = document.getElementById('visitorEmail').value.trim();
+      const project = document.getElementById('project').value.trim() || 'General Inquiry';
+      const message = document.getElementById('message').value.trim();
+      const website_hp = document.getElementById('website_hp').value;
+
+      // Custom Validation Check
+      let hasError = false;
+      let firstInvalidEl = null;
+
+      // Validate Name
+      if (!visitorName || visitorName.length < 2) {
+        setFieldError('visitorName', 'visitorNameError', true, 'Please enter your name.');
+        hasError = true;
+        if (!firstInvalidEl) firstInvalidEl = document.getElementById('visitorName');
+      } else {
+        setFieldError('visitorName', 'visitorNameError', false);
+      }
+
+      // Validate Email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!visitorEmail) {
+        setFieldError('visitorEmail', 'visitorEmailError', true, 'Please enter your email.');
+        hasError = true;
+        if (!firstInvalidEl) firstInvalidEl = document.getElementById('visitorEmail');
+      } else if (!emailRegex.test(visitorEmail)) {
+        setFieldError('visitorEmail', 'visitorEmailError', true, 'Please enter a valid email address.');
+        hasError = true;
+        if (!firstInvalidEl) firstInvalidEl = document.getElementById('visitorEmail');
+      } else {
+        setFieldError('visitorEmail', 'visitorEmailError', false);
+      }
+
+      // Validate Message
+      if (!message || message.length < 10) {
+        setFieldError('message', 'messageError', true, 'Please write a message.');
+        hasError = true;
+        if (!firstInvalidEl) firstInvalidEl = document.getElementById('message');
+      } else {
+        setFieldError('message', 'messageError', false);
+      }
+
+      // If any field failed validation, stop and focus the first problematic input
+      if (hasError) {
+        if (firstInvalidEl) firstInvalidEl.focus();
+        return;
+      }
+
+      // Loading state
+      submitBtn.disabled = true;
+      btnText.innerText = 'Sending...';
+      if (btnIcon) btnIcon.classList.add('hidden');
+      btnSpinner.classList.remove('hidden');
+
+      try {
+        const endpoint = getApiEndpoint();
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            visitorName,
+            visitorEmail,
+            project,
+            message,
+            website_hp,
+          }),
+        });
+
+        const result = await res.json();
+
+        if (!res.ok) {
+          throw new Error(result.message || result.error || 'Failed to dispatch message');
+        }
+
+        // Show Success
+        document.getElementById('successEmailRecipient').innerText = visitorEmail;
+        form.classList.add('hidden');
+        document.getElementById('successState').classList.remove('hidden');
+        document.getElementById('successState').classList.add('flex');
+      } catch (err) {
+        errorMessage.innerText = err.message || 'Something went wrong. Please try again.';
+        errorAlert.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        btnText.innerText = 'Send Message';
+        if (btnIcon) btnIcon.classList.remove('hidden');
+        btnSpinner.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

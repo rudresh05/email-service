@@ -68,6 +68,7 @@ async function bootstrap() {
 
   logger.log(`================================================================`);
   logger.log(`[STARTUP] Rudra Central Email Microservice running: http://localhost:${port}`);
+  logger.log(`[PORTAL]  Standalone Contact Web Portal: http://localhost:${port}/contact`);
   logger.log(`[SWAGGER] Interactive API Documentation available at: http://localhost:${port}/docs`);
   logger.log(`[HEALTH]  Health check endpoint: http://localhost:${port}/api/emails/health`);
   logger.log(`[POLICY]  Zero-Fallback Policy Active: Strict DTO & Template Enforced`);
